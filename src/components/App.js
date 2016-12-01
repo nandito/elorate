@@ -3,15 +3,18 @@ import { connect } from 'react-redux'
 
 import AddItem from '../actions.js'
 
+import Navigation from './Navigation.js'
+
 const mapStateToProps = (props) => ({
-  item: props
+  items: props
 })
 
-const App = (props) => {
+// Presentational Component
+const App = ({ items, children }) => {
   return (
     <div>
-      App
-      {props.items}
+      <Navigation />
+      {children}
     </div>
   )
 }
