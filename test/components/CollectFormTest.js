@@ -19,6 +19,6 @@ describe('<CollectForm /> component', () => {
   })
 
   it('renders submit button', () => {
-    expect(_wrapper.find('button')).to.have.length(1)
+    expect(_wrapper.find('input[type=\'submit\']')).to.have.length(1)
   })
 })
