@@ -3,7 +3,8 @@ export const items = (state, action) => {
     case 'ADD_ITEM':
       let newItem = {
         name: action.data,
-        id: +new Date
+        id: +new Date,
+        score: 1200
       }
       return state.concat([newItem])
     default:

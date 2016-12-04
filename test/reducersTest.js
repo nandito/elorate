@@ -16,17 +16,20 @@ describe('Reducers', () => {
       expect(resultState.length).to.eql(1)
       expect(resultState[0].id).to.be.a('number')
       expect(resultState[0].name).to.equal('test_current')
+      expect(resultState[0].score).to.equal(1200)
     })
 
     it('should add multiple new items', () => {
-      const previousState = [ { name: 'test_previous', id: 1480439897765} ]
+      const previousState = [ { name: 'test_previous', id: 1480439897765, score: 1200 } ]
       const resultState = items(previousState, sampleAction)
 
       expect(resultState.length).to.eql(2)
       expect(resultState[0].id).to.be.a('number')
       expect(resultState[0].name).to.equal('test_previous')
+      expect(resultState[0].score).to.equal(1200)
       expect(resultState[1].id).to.be.a('number')
       expect(resultState[1].name).to.equal('test_current')
+      expect(resultState[1].score).to.equal(1200)
     })
   })
 })
