@@ -4,12 +4,11 @@ import CollectForm from './CollectForm'
 import ItemList from './ItemList'
 
 // Presentational Component
-const Collect = ({ items }) => {
-  console.log(items)
+const Collect = () => {
   return (
     <div className="collect-block">
       <CollectForm />
-      <ItemList items={items} />
+      <ItemList />
     </div>
   )
 }
