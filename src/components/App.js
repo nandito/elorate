@@ -9,7 +9,6 @@ const mapStateToProps = (props) => ({
   items: props
 })
 
-// Presentational Component
 const App = ({ items, children }) => {
   return (
     <div>

@@ -3,15 +3,10 @@ import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import { addItem } from '../actions.js'
 
-const mapStateToProps = ({ items }) => ({
-  items
-})
-
 const mapDispatchToProps = dispatch => ({
   addItem: name => dispatch(addItem(name))
 })
 
-// Presentational Component
 class CollectForm extends React.Component {
   constructor(props) {
     super(props)
@@ -42,8 +37,4 @@ class CollectForm extends React.Component {
   }
 }
 
-CollectForm.propTypes = {
-  items: React.PropTypes.array.isRequired
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(CollectForm)
+export default connect(null, mapDispatchToProps)(CollectForm)
