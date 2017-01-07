@@ -6,9 +6,16 @@ import { options } from '../helpers'
 import ItemList from '../../src/components/ItemList.js'
 
 describe('<ItemList /> component', () => {
+  const onDelete = () => {}
+
   describe('if there is no item', () => {
     const items = []
-    const wrapper = shallow(<ItemList items={items} />, options(items))
+    const wrapper = shallow(
+      <ItemList
+        items={items}
+        removeItem={onDelete}
+      />,
+      options(items))
     const _wrapper = wrapper.shallow()
 
     it('renders a div', () => {
@@ -33,7 +40,12 @@ describe('<ItemList /> component', () => {
         score: 1200
       }
     ]
-    const wrapper = shallow(<ItemList />, options(items))
+    const wrapper = shallow(
+      <ItemList
+        items={items}
+        removeItem={onDelete}
+      />,
+      options(items))
     const _wrapper = wrapper.shallow()
 
     it('renders a div', () => {
@@ -64,7 +76,12 @@ describe('<ItemList /> component', () => {
         score: 1200
       }
     ]
-    const wrapper = shallow(<ItemList />, options(items))
+    const wrapper = shallow(
+      <ItemList
+        items={items}
+        removeItem={onDelete}
+      />,
+      options(items))
     const _wrapper = wrapper.shallow()
 
     it('renders a div', () => {

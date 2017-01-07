@@ -1,7 +1,7 @@
 import React from 'react'
 
 import CollectForm from './CollectForm'
-import ItemList from './ItemList'
+import ItemList from '../containers/ItemList'
 
 // Presentational Component
 const Collect = () => {
