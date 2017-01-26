@@ -1,6 +1,6 @@
 import React from 'react'
 
-import CollectForm from './CollectForm'
+import CollectForm from '../containers/CollectForm'
 import ItemList from '../containers/ItemList'
 
 const Collect = () => {
