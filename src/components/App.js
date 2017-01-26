@@ -1,15 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux'
-
-import AddItem from '../actions.js'
-
 import Navigation from './Navigation.js'
 
-const mapStateToProps = (props) => ({
-  items: props
-})
-
-const App = ({ items, children }) => {
+const App = ({ children }) => {
   return (
     <div>
       <Navigation />
@@ -18,4 +10,4 @@ const App = ({ items, children }) => {
   )
 }
 
-export default connect(mapStateToProps)(App);
+export default App
