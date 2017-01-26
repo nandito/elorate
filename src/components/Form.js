@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropTypes } from 'react';
 
 const Form = ({ title, submit }) => {
   let input
@@ -21,6 +21,11 @@ const Form = ({ title, submit }) => {
       </form>
     </div>
   )
+}
+
+Form.propTypes = {
+  title: PropTypes.string.isRequired,
+  submit: PropTypes.func.isRequired
 }
 
 export default Form

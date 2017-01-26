@@ -6,6 +6,7 @@
   "scripts": {
     "build": "watchify src/main.js -o public/bundle.js -t [ babelify --presets [ react es2015 ] ]",
     "server": "cd public; live-server --port=1234 --entry-file=index.html",
+    "lint": "eslint --cache --ext=js,jsx src",
     "test": "mocha --require babel-register --recursive",
     "test:watch": "mocha --require babel-register --recursive --watch"
   },
@@ -38,6 +39,8 @@
     "babel-preset-airbnb": "^2.1.1",
     "chai": "^3.5.0",
     "enzyme": "^2.6.0",
+    "eslint": "^3.14.1",
+    "eslint-plugin-react": "^6.9.0",
     "mocha": "^3.2.0",
     "react-addons-test-utils": "^15.4.1"
   }

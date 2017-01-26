@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Navigation from './Navigation.js'
 
 const App = ({ children }) => {
@@ -8,6 +8,10 @@ const App = ({ children }) => {
       {children}
     </div>
   )
+}
+
+App.propTypes = {
+  children: PropTypes.node
 }
 
 export default App

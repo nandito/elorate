@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { addItem } from '../actions.js'
 import Form from '../components/Form.js'
@@ -23,6 +22,10 @@ class CollectForm extends Component {
       <Form title={'Collect elements'} submit={this.addItem} />
     )
   }
+}
+
+CollectForm.propTypes = {
+  addItem: PropTypes.func.isRequired
 }
 
 export default connect(null, mapDispatchToProps)(CollectForm)
