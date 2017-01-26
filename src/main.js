@@ -11,7 +11,10 @@ reducers.routing = routerReducer
 import App from './components/App'
 import Collect from './components/Collect'
 
-const store = createStore( combineReducers(reducers) )
+const store = createStore(
+  combineReducers(reducers),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 const history = syncHistoryWithStore(browserHistory, store)
 
 let routes = (
