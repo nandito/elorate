@@ -3,7 +3,7 @@ import Navigation from './Navigation.js'
 
 const App = ({ children }) => {
   return (
-    <div>
+    <div className="container">
       <Navigation />
       {children}
     </div>
