@@ -10,7 +10,7 @@ reducers.routing = routerReducer
 
 import App from './components/App.js'
 import Collect from './components/Collect.js'
-import Fight from './components/Fight.js'
+import Rate from './containers/Rate.js'
 
 const store = createStore(
   combineReducers(reducers),
@@ -21,7 +21,7 @@ const history = syncHistoryWithStore(browserHistory, store)
 let routes = (
   <Route path='/' component={App}>
     <Route path='/collect' component={Collect} />
-    <Route path='/fight' component={Fight} />
+    <Route path='/rate' component={Rate} />
   </Route>
 )
 
