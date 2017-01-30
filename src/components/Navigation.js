@@ -7,6 +7,7 @@ const Navigation = () => (
     <ul>
       <li><Link to='/'>Home</Link></li>
       <li><Link to='/collect'>Collect</Link></li>
+      <li><Link to='/fight'>Fight</Link></li>
     </ul>
   </div>
 )

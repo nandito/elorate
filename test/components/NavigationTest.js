@@ -13,9 +13,9 @@ describe('<Navigation /> component', () => {
     expect(wrapper.find('ul')).to.have.length(1)
   })
 
-  it('renders 2 links', () => {
-    expect(wrapper.find('li')).to.have.length(2)
-    expect(wrapper.find(Link)).to.have.length(2)
+  it('renders 3 links', () => {
+    expect(wrapper.find('li')).to.have.length(3)
+    expect(wrapper.find(Link)).to.have.length(3)
   })
 
   it('renders link to home', () => {
@@ -24,5 +24,9 @@ describe('<Navigation /> component', () => {
 
   it('renders link to collect', () => {
     expect(wrapper.find(Link).at(1).render().text()).to.equal('Collect')
+  })
+
+  it('renders link to fight', () => {
+    expect(wrapper.find(Link).at(2).render().text()).to.equal('Fight')
   })
 })

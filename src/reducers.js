@@ -5,7 +5,8 @@ export const items = (state, action) => {
         {
           name: action.data,
           id: +new Date,
-          score: 1200
+          score: 1200,
+          fightCount: 0
         }
       ])
     case 'REMOVE_ITEM':
