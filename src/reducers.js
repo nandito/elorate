@@ -1,38 +1,61 @@
 export const items = (state, action) => {
-  const { type, data } = action
-  let winner, loser
+  const { type, payload } = action
   switch (type) {
     case 'ADD_ITEM':
       return state.concat([
         {
-          name: data,
+          name: payload,
           id: +new Date,
           score: 1200,
-          fightCount: 0
+          games: 0,
+          wins:0,
+          losses: 0
         }
       ])
     case 'REMOVE_ITEM':
-      return state.filter(i => i.id !== data)
-    case 'WIN_FIGHT':
-      // TODO: find by id, increment fight count
-      winner = state.filter(i => i.id === data.selfId)
-      loser = state.filter(i => i.id === data.enemyId)
-
-      winner.fightCount += 1
-      loser.fightCount += 1
-      console.log(winner, loser)
-      return state.merge(winner, loser)
+      return state.filter(i => i.id !== payload)
+    case 'DRAW':
+    case 'SKIP':
+    case 'WIN':
+      return state.map(item => {
+        if (item.id === payload.player1.id) {
+          return Object.assign({}, item, {
+            score: payload.player1.score,
+            wins: payload.player1.wins,
+            losses: payload.player1.losses
+          })
+        }
+        if (item.id === payload.player2.id) {
+          return Object.assign({}, item, {
+            score: payload.player2.score,
+            wins: payload.player2.wins,
+            losses: payload.player2.losses
+          })
+        }
+        return item
+      })
+    case 'UPDATE_ITEM':
+      return state.map((item) => {
+        if (item.id === payload.id) {
+          return Object.assign({}, item, {
+            name: payload.name,
+            score: payload.score,
+            games: payload.games
+          })
+        }
+        return item
+      })
     default:
       return state || []
   }
 }
 
 export const pickedItems = (state = [], action) => {
-  const { type, data } = action
+  const { type, payload } = action
 
   switch (type) {
     case 'PICK_ELEMENTS_TO_RATE':
-      return data.selectedItems || state
+      return payload.selectedItems || state
     default:
       return state
   }

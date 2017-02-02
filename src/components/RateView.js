@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-const RateView = ({ items, win }) => {
+const RateView = ({ items, win, draw, skip }) => {
   if (items.length === 0) {
     return (
       <div className="row text-center">
@@ -17,20 +17,23 @@ const RateView = ({ items, win }) => {
         {items.map(item => (
           <div key={item.id} className="col-pl-50 text-center">
             <h4>{item.name}</h4>
-            <button onClick={win.bind(this)} className="button-outlined">This wins</button>
+            <button onClick={win.bind(null, item.id)} className="button-outlined win-button">This wins</button>
           </div>
         ))}
       </div>
       <div className="display-flex flex-align-items-center flex-justify-content-center control">
-        <button className="button-outlined">Draw</button>
-        <button className="button-outlined">Skip</button>
+        <button onClick={draw} className="button-outlined">Draw</button>
+        <button onClick={skip} className="button-outlined">Skip</button>
       </div>
     </div>
   )
 }
 
 RateView.propTypes = {
-  items: PropTypes.array.isRequired
+  items: PropTypes.array.isRequired,
+  win: PropTypes.func.isRequired,
+  draw: PropTypes.func.isRequired,
+  skip: PropTypes.func.isRequired
 }
 
 export default RateView
