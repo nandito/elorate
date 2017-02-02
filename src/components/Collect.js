@@ -5,7 +5,7 @@ import ItemList from '../containers/ItemList'
 
 const Collect = () => {
   return (
-    <div className="collect-block">
+    <div className="collect-block display-flex flex-direction-column">
       <CollectForm />
       <ItemList />
     </div>
