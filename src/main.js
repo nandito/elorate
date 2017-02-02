@@ -44,16 +44,24 @@ function init() {
 
 init()
 
-// TODO:
-/*
+// TODO: use JSX
 
-1. Collect items
-/collect
-Add item: ___________ (input field)
+// TODO: save items to localStorage
 
-2. Fight items
-/fight
+// TODO: home
+// [x] /
+// [_] what is ELO rate
+// [_] logic description (elo rates)
+// [_] technology description (react, redux)
 
-3. Show scores
+// TODO: collect items
+// [x] /collect
+// [x] add item
+// [x] remove item
+// [_] add multiple items
+// [_] remove multiple items
+// [x] nice input form
 
-*/
+// TODO: show scores
+// [_] /scores
+// [x] show items

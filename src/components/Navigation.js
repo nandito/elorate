@@ -1,6 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router'
 
+// TODO: navigation facelift:
+// * inline list items
+// * visual separation
+
 const Navigation = () => (
   <div className="row">
     Navigation
