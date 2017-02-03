@@ -1,3 +1,5 @@
+import uuid from 'uuid/v4'
+
 export const items = (state, action) => {
   const { type, payload } = action
   switch (type) {
@@ -5,7 +7,7 @@ export const items = (state, action) => {
       return state.concat([
         {
           name: payload,
-          id: +new Date,
+          id: uuid(),
           score: 1200,
           games: 0,
           wins:0,
@@ -22,14 +24,16 @@ export const items = (state, action) => {
           return Object.assign({}, item, {
             score: payload.player1.score,
             wins: payload.player1.wins,
-            losses: payload.player1.losses
+            losses: payload.player1.losses,
+            games: payload.player1.games
           })
         }
         if (item.id === payload.player2.id) {
           return Object.assign({}, item, {
             score: payload.player2.score,
             wins: payload.player2.wins,
-            losses: payload.player2.losses
+            losses: payload.player2.losses,
+            games: payload.player2.games
           })
         }
         return item

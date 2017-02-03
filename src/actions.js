@@ -1,12 +1,11 @@
 export const addItem = name => ( { type: 'ADD_ITEM', payload: name } )
 export const removeItem = id => ( { type: 'REMOVE_ITEM', payload: id } )
-export const updateItem = ({ id, name, score, games }) => ({
+export const updateItem = ({ id, name, score }) => ({
   type: 'UPDATE_ITEM',
   payload: {
     id,
     name,
-    score,
-    games
+    score
   }
 })
 
