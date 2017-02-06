@@ -9,7 +9,7 @@ import * as reducers from './reducers.js'
 reducers.routing = routerReducer
 
 import App from './components/App.js'
-import Collect from './components/Collect.js'
+import Collect from './containers/Collect.js'
 import Rate from './containers/Rate.js'
 
 const store = createStore(

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-const ItemListUI = ({ items, removeItem }) => {
+const ItemList = ({ items, removeItem }) => {
   if (!items.length) {
     return (
       <div className="row">
@@ -43,7 +43,7 @@ const ItemListUI = ({ items, removeItem }) => {
   )
 }
 
-ItemListUI.propTypes = {
+ItemList.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
@@ -52,4 +52,4 @@ ItemListUI.propTypes = {
   removeItem: PropTypes.func.isRequired
 }
 
-export default ItemListUI
+export default ItemList
