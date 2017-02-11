@@ -39,6 +39,12 @@ const ItemList = ({ items, removeItem }) => {
           </tbody>
         </table>
       </div>
+      <div className="col-p-100 text-right">
+        <button className="button-default">Export { items.length > 1 ? 'items' : 'item' }</button>
+        { items.length > 1
+          && <button className="button-default remove-all">Remove all items</button>
+        }
+      </div>
     </div>
   )
 }

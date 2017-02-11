@@ -4,6 +4,14 @@
   padding: 0;
 }
 
+.button-default.remove-all {
+  background-color: #fb4249;
+}
+
+.button-default.remove-all:hover, .button-default.remove-all:focus {
+  background-color: #fd131c;
+}
+
 .button-outlined.win-button {
   margin-right: 0;
 }
