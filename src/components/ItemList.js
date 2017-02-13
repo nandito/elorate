@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-const ItemList = ({ items, removeItem }) => {
+const ItemList = ({ items, removeItem, exportItems }) => {
   if (!items.length) {
     return (
       <div className="row">
@@ -40,7 +40,9 @@ const ItemList = ({ items, removeItem }) => {
         </table>
       </div>
       <div className="col-p-100 text-right">
-        <button className="button-default">Export { items.length > 1 ? 'items' : 'item' }</button>
+        <button onClick={exportItems} className="button-default">
+          Export { items.length > 1 ? 'items' : 'item' }
+        </button>
         { items.length > 1
           && <button className="button-default remove-all">Remove all items</button>
         }
@@ -55,7 +57,8 @@ ItemList.propTypes = {
     name: PropTypes.string.isRequired,
     score: PropTypes.number.isRequired
   })),
-  removeItem: PropTypes.func.isRequired
+  removeItem: PropTypes.func.isRequired,
+  exportItems: PropTypes.func.isRequired
 }
 
 export default ItemList

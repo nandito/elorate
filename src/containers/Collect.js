@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { addItem, removeItem } from '../actions.js'
 import Form from '../components/Form.js'
 import ItemList from '../components/ItemList.js'
+import { download } from '../lib/download'
 
 const mapStateToProps = ({ items }) => ({
   items
@@ -18,6 +19,7 @@ class Collect extends Component {
     super(props)
     this._add = this._add.bind(this)
     this._remove = this._remove.bind(this)
+    this._export = this._export.bind(this)
   }
 
   _add(item) {
@@ -28,6 +30,10 @@ class Collect extends Component {
     this.props.removeItem(id)
   }
 
+  _export() {
+    download(JSON.stringify(this.props.items), 'item_list.txt', 'text/plain')
+  }
+
   render() {
     return (
       <div className="collect-block display-flex flex-direction-column">
@@ -35,6 +41,7 @@ class Collect extends Component {
         <ItemList
           items={this.props.items}
           removeItem={this._remove}
+          exportItems={this._export}
         />
       </div>
     )
