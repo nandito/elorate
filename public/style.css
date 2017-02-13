@@ -15,3 +15,21 @@
 .button-outlined.win-button {
   margin-right: 0;
 }
+
+.button-group {
+  margin-right: 1em;
+  display: inline-block;
+}
+
+.button-group button {
+  margin-right: 0;
+  border-radius: 0;
+}
+
+.button-group button:first-child {
+  border-radius: 3px 0 0 3px;
+}
+
+.button-group button:last-child {
+  border-radius: 0 3px 3px 0;
+}

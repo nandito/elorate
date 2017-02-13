@@ -63,6 +63,19 @@ describe('Reducers', () => {
       })
     })
 
+    describe('REMOVE_ALL', () => {
+      it('should remove all items', () => {
+        const sampleAction = { type: 'REMOVE_ALL' }
+        const resultState = items([
+          { name: 'test_previous1', id: 'aaaaaaaa-5a51-4000-96fc-60fcd8dd532a', score: 1200 },
+          { name: 'test_previous2', id: 'bbbbbbbb-5a51-4000-96fc-60fcd8dd532b', score: 1200 }
+        ], sampleAction)
+
+        expect(resultState).to.be.an('array')
+        expect(resultState.length).to.eql(0)
+      })
+    })
+
     describe('UPDATE_ITEM', () => {
       it('should update an item', () => {
         const sampleAction = {

@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
+import RemoveAllButton from './RemoveAllButton'
 
-const ItemList = ({ items, removeItem, exportItems }) => {
+const ItemList = ({ items, removeItem, exportItems, removeAll }) => {
   if (!items.length) {
     return (
       <div className="row">
@@ -44,7 +45,7 @@ const ItemList = ({ items, removeItem, exportItems }) => {
           Export { items.length > 1 ? 'items' : 'item' }
         </button>
         { items.length > 1
-          && <button className="button-default remove-all">Remove all items</button>
+          && <RemoveAllButton removeAll={removeAll} />
         }
       </div>
     </div>
@@ -58,6 +59,7 @@ ItemList.propTypes = {
     score: PropTypes.number.isRequired
   })),
   removeItem: PropTypes.func.isRequired,
+  removeAll: PropTypes.func.isRequired,
   exportItems: PropTypes.func.isRequired
 }
 

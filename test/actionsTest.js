@@ -1,4 +1,4 @@
-import { addItem, removeItem, updateItem, win, draw, skip, pickElementsToRate } from '../src/actions'
+import { addItem, removeItem, removeAll, updateItem, win, draw, skip, pickElementsToRate } from '../src/actions'
 import { expect } from 'chai'
 
 describe('Actions', () => {
@@ -44,6 +44,16 @@ describe('Actions', () => {
       }
 
       expect(removeItem(itemId)).to.eql(expectedAction)
+    })
+  })
+
+  describe('removeAll', () => {
+    it('should create an action to remove all items', () => {
+      const expectedAction = {
+        type: 'REMOVE_ALL'
+      }
+
+      expect(removeAll()).to.eql(expectedAction)
     })
   })
 

@@ -16,6 +16,8 @@ export const items = (state, action) => {
       ])
     case 'REMOVE_ITEM':
       return state.filter(i => i.id !== payload)
+    case 'REMOVE_ALL':
+      return []
     case 'DRAW':
     case 'SKIP':
     case 'WIN':

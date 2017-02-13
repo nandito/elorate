@@ -14,6 +14,7 @@ describe('<ItemList /> component', () => {
       <ItemList
         items={items}
         removeItem={onDelete}
+        removeAll={() => {}}
         exportItems={() => {}}
       />,
       options(items))
@@ -47,6 +48,7 @@ describe('<ItemList /> component', () => {
       <ItemList
         items={items}
         removeItem={onDelete}
+        removeAll={() => {}}
         exportItems={() => {}}
       />,
       options(items))
