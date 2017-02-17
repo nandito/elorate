@@ -52,25 +52,3 @@ function init() {
 }
 
 init()
-
-// TODO: use JSX
-
-// TODO: home
-// [x] /
-// [_] what is ELO rate
-// [_] logic description (elo rates)
-// [_] technology description (react, redux)
-
-// TODO: collect items
-// [x] /collect
-// [x] add item
-// [x] remove item
-// [_] add multiple items
-// [_] remove all items
-// [_] export all
-// [_] import
-// [x] nice input form
-
-// TODO: show scores
-// [_] /scores
-// [x] show items
