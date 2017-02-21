@@ -47,6 +47,25 @@ describe('Reducers', () => {
       })
     })
 
+    describe('BULK_IMPORT', () => {
+      it('should fill the store with the given valid data', () => {
+        const sampleJSON = JSON.parse('[{"name":"test","id":"9fed51be-031c-4ffe-b033-38f2e719ea27","score":1200,"games":0,"wins":0,"losses":0},{"name":"test2","id":"996861e1-fa6e-4ffa-95f9-95f254494663","score":1200,"games":0,"wins":0,"losses":0}]')
+        const sampleAction = { type: 'BULK_IMPORT', payload: sampleJSON }
+        const resultState = items([], sampleAction)
+
+        expect(resultState.length).to.eql(2)
+        expect(resultState[0].id).to.equal('9fed51be-031c-4ffe-b033-38f2e719ea27')
+        expect(resultState[1].id).to.equal('996861e1-fa6e-4ffa-95f9-95f254494663')
+      })
+
+      it('should keep the store empty if the data is invalid', () => {
+        const sampleAction = { type: 'BULK_IMPORT', payload: null }
+        const resultState = items([], sampleAction)
+
+        expect(resultState.length).to.eql(0)
+      })
+    })
+
     describe('REMOVE_ITEM', () => {
       it('should remove an item', () => {
         const sampleAction = { type: 'REMOVE_ITEM', payload: 'aaaaaaaa-5a51-4000-96fc-60fcd8dd532a' }

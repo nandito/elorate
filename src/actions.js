@@ -1,6 +1,45 @@
 export const addItem = name => ( { type: 'ADD_ITEM', payload: name } )
 export const removeItem = id => ( { type: 'REMOVE_ITEM', payload: id } )
 export const removeAll = () => ( { type: 'REMOVE_ALL' } )
+
+const validate = data => {
+  let isValid = true
+  let parsedData
+
+  try {
+    parsedData = JSON.parse(data)
+  }
+  catch (e) {
+    console.error('Failed to parse JSON!')
+  }
+
+  if (!Array.isArray(parsedData)) {
+    console.error('Items should be an array!')
+    return null
+  }
+
+  parsedData.forEach(item => {
+    if (
+      typeof item.name !== 'string' ||
+      typeof item.id !== 'string' ||
+      typeof item.score !== 'number' ||
+      typeof item.games !== 'number' ||
+      typeof item.wins !== 'number' ||
+      typeof item.losses !== 'number'
+    ) {
+      console.error('Type of the item properties are invalid!')
+      isValid = false
+    }
+  })
+
+  return isValid ? parsedData : null
+}
+
+export const bulkImport = data => ({
+  type: 'BULK_IMPORT',
+  payload: validate(data)
+})
+
 export const updateItem = ({ id, name, score }) => ({
   type: 'UPDATE_ITEM',
   payload: {

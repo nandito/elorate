@@ -1,14 +1,11 @@
 import React, { PropTypes } from 'react'
 import RemoveAllButton from './RemoveAllButton'
+import NoItems from './NoItems'
 
-const ItemList = ({ items, removeItem, exportItems, removeAll }) => {
+const ItemList = ({ items, removeItem, exportItems, removeAll, bulkImport }) => {
   if (!items.length) {
     return (
-      <div className="row">
-        <p>
-          There are no items added.
-        </p>
-    </div>
+      <NoItems bulkImport={bulkImport} />
     )
   }
 
@@ -60,6 +57,7 @@ ItemList.propTypes = {
   })),
   removeItem: PropTypes.func.isRequired,
   removeAll: PropTypes.func.isRequired,
+  bulkImport: PropTypes.func.isRequired,
   exportItems: PropTypes.func.isRequired
 }
 

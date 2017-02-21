@@ -32,6 +32,8 @@ Rank items by using ELO rating system.
 * [ ] Background
 * [ ] Nice navigation with `active` item indication
 * [ ] Toggle scores on a modal
+* [ ] CI
+* [ ] Deploy to Github pages
 
 #### Settings
 * [ ] `K` factor
@@ -43,6 +45,5 @@ Rank items by using ELO rating system.
 * [ ] "Technology description" - just like in the README.md
 
 #### Collect page
-* [ ] Add multiple items
-* [ ] Import items
+* [ ] Notification if import fails
 * [ ] Game count

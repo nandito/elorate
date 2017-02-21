@@ -14,6 +14,8 @@ export const items = (state, action) => {
           losses: 0
         }
       ])
+    case 'BULK_IMPORT':
+      return payload || []
     case 'REMOVE_ITEM':
       return state.filter(i => i.id !== payload)
     case 'REMOVE_ALL':

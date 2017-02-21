@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { addItem, removeItem, removeAll } from '../actions.js'
+import { addItem, removeItem, removeAll, bulkImport } from '../actions.js'
 import Form from '../components/Form.js'
 import ItemList from '../components/ItemList.js'
 import { download } from '../lib/download'
@@ -12,7 +12,8 @@ const mapStateToProps = ({ items }) => ({
 const mapDispatchToProps = dispatch => ({
   addItem: name => dispatch(addItem(name)),
   removeItem: id => dispatch(removeItem(id)),
-  removeAll: () => dispatch(removeAll())
+  removeAll: () => dispatch(removeAll()),
+  bulkImport: data => dispatch(bulkImport(data))
 })
 
 class Collect extends Component {
@@ -22,6 +23,7 @@ class Collect extends Component {
     this._remove = this._remove.bind(this)
     this._export = this._export.bind(this)
     this._removeAll = this._removeAll.bind(this)
+    this._bulkImport = this._bulkImport.bind(this)
   }
 
   _add(item) {
@@ -40,6 +42,10 @@ class Collect extends Component {
     this.props.removeAll()
   }
 
+  _bulkImport(data) {
+    this.props.bulkImport(data)
+  }
+
   render() {
     return (
       <div className="collect-block display-flex flex-direction-column">
@@ -49,6 +55,7 @@ class Collect extends Component {
           removeItem={this._remove}
           exportItems={this._export}
           removeAll={this._removeAll}
+          bulkImport={this._bulkImport}
         />
       </div>
     )
@@ -57,6 +64,7 @@ class Collect extends Component {
 
 Collect.propTypes = {
   addItem: PropTypes.func.isRequired,
+  bulkImport: PropTypes.func.isRequired,
   removeItem: PropTypes.func.isRequired,
   removeAll: PropTypes.func.isRequired,
   items: PropTypes.array.isRequired

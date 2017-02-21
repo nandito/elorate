@@ -1,4 +1,14 @@
-import { addItem, removeItem, removeAll, updateItem, win, draw, skip, pickElementsToRate } from '../src/actions'
+import {
+  addItem,
+  bulkImport,
+  removeItem,
+  removeAll,
+  updateItem,
+  win,
+  draw,
+  skip,
+  pickElementsToRate
+} from '../src/actions'
 import { expect } from 'chai'
 
 describe('Actions', () => {
@@ -32,6 +42,29 @@ describe('Actions', () => {
       }
 
       expect(addItem(itemName)).to.eql(expectedAction)
+    })
+  })
+
+  describe('bulkImport', () => {
+    it('should create an action to bulk import items with an array in the payload for valid data', () => {
+      const validData = '[{"name":"test","id":"9fed51be-031c-4ffe-b033-38f2e719ea27","score":1200,"games":0,"wins":0,"losses":0},{"name":"test2","id":"996861e1-fa6e-4ffa-95f9-95f254494663","score":1200,"games":0,"wins":0,"losses":0}]'
+      const parsedData = JSON.parse(validData)
+      const expectedAction = {
+        type: 'BULK_IMPORT',
+        payload: parsedData
+      }
+
+      expect(bulkImport(validData)).to.eql(expectedAction)
+    })
+
+    it('should create an action to bulk import items with null payload for invalid data', () => {
+      const invalidData = '[{}]'
+      const expectedAction = {
+        type: 'BULK_IMPORT',
+        payload: null
+      }
+
+      expect(bulkImport(invalidData)).to.eql(expectedAction)
     })
   })
 

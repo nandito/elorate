@@ -16,20 +16,16 @@ describe('<ItemList /> component', () => {
         removeItem={onDelete}
         removeAll={() => {}}
         exportItems={() => {}}
+        bulkImport={() => {}}
       />,
       options(items))
 
-    it('renders a div', () => {
-      expect(wrapper.find('.row')).to.have.length(1)
+    it('renders <NoItems /> component', () => {
+      expect(wrapper.find('NoItems')).to.have.length(1)
     })
 
     it('does not render the table', () => {
       expect(wrapper.find('table')).to.have.length(0)
-    })
-
-    it('renders a paragraph', () => {
-      expect(wrapper.find('p')).to.have.length(1)
-      expect(wrapper.find('p').text()).to.equal('There are no items added.')
     })
   })
 
@@ -50,6 +46,7 @@ describe('<ItemList /> component', () => {
         removeItem={onDelete}
         removeAll={() => {}}
         exportItems={() => {}}
+        bulkImport={() => {}}
       />,
       options(items))
 
