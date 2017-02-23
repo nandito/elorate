@@ -27,7 +27,7 @@ const ItemList = ({ items, removeItem, exportItems, removeAll, bulkImport }) => 
             {items.map((item) =>
               <tr key={item.id}>
                 <td>{item.name}</td>
-                <td>{item.score}</td>
+                <td>{item.score.toFixed(2)}</td>
                 <td>{item.games}</td>
                 <td>{item.wins}</td>
                 <td>{item.losses}</td>

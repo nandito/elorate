@@ -61,7 +61,7 @@ describe('<ItemList /> component', () => {
 
     it('renders the proper value to the row', () => {
       expect(wrapper.find('tbody tr td').at(0).text()).to.equal('test')
-      expect(wrapper.find('tbody tr td').at(1).text()).to.equal('1210')
+      expect(wrapper.find('tbody tr td').at(1).text()).to.equal('1210.00')
       expect(wrapper.find('tbody tr td').at(2).text()).to.equal('1')
       expect(wrapper.find('tbody tr td').at(3).text()).to.equal('1')
       expect(wrapper.find('tbody tr td').at(4).text()).to.equal('0')
