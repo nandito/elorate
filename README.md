@@ -30,6 +30,7 @@ Rank items by using ELO rating system.
 #### Global
 * [ ] Use JSX
 * [ ] Background
+* [ ] Empty picked item list if items are removed
 * [ ] Nice navigation with `active` item indication
 * [ ] Toggle scores on a modal
 * [ ] CI
@@ -38,11 +39,6 @@ Rank items by using ELO rating system.
 #### Settings
 * [ ] `K` factor
 * [ ] Default score (when a new item is created)
-
-#### Home page
-* [ ] "About this app"
-* [ ] "About the logic (ELO rate)"
-* [ ] "Technology description" - just like in the README.md
 
 #### Collect page
 * [ ] Notification if import fails
