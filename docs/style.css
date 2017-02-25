@@ -1,0 +1,35 @@
+.button-stripped.remove-button {
+  margin-bottom: 0;
+  line-height: 1;
+  padding: 0;
+}
+
+.button-default.remove-all {
+  background-color: #fb4249;
+}
+
+.button-default.remove-all:hover, .button-default.remove-all:focus {
+  background-color: #fd131c;
+}
+
+.button-outlined.win-button {
+  margin-right: 0;
+}
+
+.button-group {
+  margin-right: 1em;
+  display: inline-block;
+}
+
+.button-group button {
+  margin-right: 0;
+  border-radius: 0;
+}
+
+.button-group button:first-child {
+  border-radius: 3px 0 0 3px;
+}
+
+.button-group button:last-child {
+  border-radius: 0 3px 3px 0;
+}
