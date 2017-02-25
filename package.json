@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "watchify src/main.js -o public/bundle.js -t [ babelify --presets [ react es2015 ] ]",
+    "build:gh-pages": "rm docs/* && cp public/* docs/",
     "server": "cd public; live-server --port=1234 --entry-file=index.html",
     "lint": "eslint --cache --ext=js,jsx src",
     "test": "mocha --require babel-register --recursive",
