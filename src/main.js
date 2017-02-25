@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
-import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import { Router, Route, IndexRoute, browserHistory, Redirect } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import throttle from 'lodash.throttle'
 import { loadState, saveState } from './localStorage'
@@ -29,10 +29,11 @@ store.subscribe(throttle(() => {
 }, 1000))
 
 let routes = (
-  <Route path='/' component={App}>
+  <Route path='/elorate' component={App}>
     <IndexRoute component={Home} />
-    <Route path='/collect' component={Collect} />
-    <Route path='/rate' component={Rate} />
+    <Route path='/elorate/collect' component={Collect} />
+    <Route path='/elorate/rate' component={Rate} />
+    <Redirect path='/*' to='/elorate' />
   </Route>
 )
 
