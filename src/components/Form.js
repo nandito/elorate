@@ -10,14 +10,15 @@ const Form = ({ title, submit }) => {
   }
 
   return (
-    <div>
-      <h1>{title}</h1>
+    <div className="flex-justify-content-center row-flex">
+      <h2>{title}</h2>
       <form onSubmit={onSubmit}>
-        <label>
-          Item
-          <input ref={el => (input = el)} type="text"></input>
-        </label>
-        <input type="submit" value="Add" />
+        <div className="input-with-button button-right">
+          <input ref={el => (input = el)} type="text" placeholder="Enter item" required />
+          <span className="button-wrapper">
+            <button type="submit" className="button-default">Add</button>
+          </span>
+        </div>
       </form>
     </div>
   )

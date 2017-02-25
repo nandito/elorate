@@ -2,24 +2,37 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+import throttle from 'lodash.throttle'
+import { loadState, saveState } from './localStorage'
 
 import * as reducers from './reducers.js'
 reducers.routing = routerReducer
 
-import App from './components/App'
-import Collect from './components/Collect'
+import App from './components/App.js'
+import Home from './components/Home.js'
+import Collect from './containers/Collect.js'
+import Rate from './containers/Rate.js'
+
+const persistedState = loadState()
 
 const store = createStore(
   combineReducers(reducers),
+  persistedState,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 const history = syncHistoryWithStore(browserHistory, store)
 
+store.subscribe(throttle(() => {
+  saveState(store.getState())
+}, 1000))
+
 let routes = (
   <Route path='/' component={App}>
+    <IndexRoute component={Home} />
     <Route path='/collect' component={Collect} />
+    <Route path='/rate' component={Rate} />
   </Route>
 )
 
@@ -41,17 +54,3 @@ function init() {
 }
 
 init()
-
-// TODO:
-/*
-
-1. Collect items
-/collect
-Add item: ___________ (input field)
-
-2. Fight items
-/fight
-
-3. Show scores
-
-*/

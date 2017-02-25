@@ -8,14 +8,12 @@ import Navigation from '../../src/components/Navigation.js'
 describe('<Navigation /> component', () => {
   const wrapper = shallow(<Navigation />)
 
-  it('renders a div with an unordered list', () => {
+  it('renders a div', () => {
     expect(wrapper.find('div')).to.have.length(1)
-    expect(wrapper.find('ul')).to.have.length(1)
   })
 
-  it('renders 2 links', () => {
-    expect(wrapper.find('li')).to.have.length(2)
-    expect(wrapper.find(Link)).to.have.length(2)
+  it('renders 3 links', () => {
+    expect(wrapper.find(Link)).to.have.length(3)
   })
 
   it('renders link to home', () => {
@@ -24,5 +22,9 @@ describe('<Navigation /> component', () => {
 
   it('renders link to collect', () => {
     expect(wrapper.find(Link).at(1).render().text()).to.equal('Collect')
+  })
+
+  it('renders link to fight', () => {
+    expect(wrapper.find(Link).at(2).render().text()).to.equal('Rate')
   })
 })
