@@ -8,9 +8,9 @@ const Home = () => (
 
     <h3>Usage</h3>
     <ol>
-      <li>Add some items on the <Link to='/collect'>Collect</Link> page.</li>
-      <li>Decide between items on the <Link to='/rate'>Rate</Link> page.</li>
-      <li>You can check the score changes on the <Link to='/collect'>Collect</Link> page.</li>
+      <li>Add some items on the <Link to='/elorate/collect'>Collect</Link> page.</li>
+      <li>Decide between items on the <Link to='/elorate/rate'>Rate</Link> page.</li>
+      <li>You can check the score changes on the <Link to='/elorate/collect'>Collect</Link> page.</li>
     </ol>
 
     <h3>Features</h3>
